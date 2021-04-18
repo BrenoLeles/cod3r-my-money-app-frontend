@@ -5,11 +5,15 @@ import { connect } from 'react-redux';
 import If from '../operator/if';
 
 class TabContent extends Component {
+	constructor(props) {
+		super(props);
+	}
+	
 	render() {
 		const visible = this.props.tab.visible[this.props.id];
 		const selected = this.props.tab.selected === this.props.id;
 		return (
-			 <If teste={visible}>
+			 <If test={visible}>
 				 <div id={this.props.id} className={`tab-pane ${selected ? 'active' : ''}`}>
 					 {this.props.children}
 				 </div>
