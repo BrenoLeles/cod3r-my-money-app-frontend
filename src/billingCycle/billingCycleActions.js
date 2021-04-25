@@ -1,12 +1,16 @@
 import axios from 'axios';
 import {toastr} from "react-redux-toastr";
-import { reset as resetForm, initialize } from 'redux-form';
+import { initialize } from 'redux-form';
 import { showTabs, selectTab } from "../common/tab/tabActions";
 
 export const BILLING_CYCLES_FETCHED = '[BILLING CYCLES] LISTAR';
 export const FORM_BILLING_CYCLES = '[FORM] BILLING CYCLES';
 
-const BASE_URL = 'http://localhost:3003/api';
+const GAMBIARRA_PQ_NAO_RECONHECE_ENV_APP_API_URL = 'http://localhost:3003/api';
+const GAMBIARRA_PQ_NAO_RECONHECE_ENV_APP_OAPI_URL = 'http://localhost:3003/oapi';
+
+const BASE_URL = GAMBIARRA_PQ_NAO_RECONHECE_ENV_APP_API_URL;
+
 
 const INITIAL_VALUES = {credits: [{}], debts: [{}]};
 
